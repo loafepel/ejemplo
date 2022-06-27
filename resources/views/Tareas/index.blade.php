@@ -12,6 +12,15 @@
          @error('title')
           <h6 class="alert alert-danger">{{$message}}</h6>
          @enderror
+
+         @if($errors->any())
+         <div class="alert alert-danger">
+             @foreach($errors->all() as $error)
+             - {{ $error }} <br>
+             @endforeach
+         </div>
+         @endif
+
             <div class="mb-3">
               <label for="title" class="form-label">Nombre de tarea</label>
               <input type="text" name="title" class="form-control" value="{{old('title')}}">

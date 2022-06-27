@@ -15,6 +15,8 @@ Route::get('/app', function () {
     return view('Tareas.index');
 });*/
 
+
+
 Route::get('/Tareas', [TareasController::class, 'index'])->name('prueba');
 
 Route::post('/Tareas', [TareasController::class, 'store'])->name('prueba');
