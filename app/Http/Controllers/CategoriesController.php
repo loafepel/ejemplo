@@ -79,9 +79,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $category)
     {
-        $category=Category::find($id);
+        $category=Category::find($category);
         $category->name = $request->name;
         $category->color= $request->color;
         $category->save();
@@ -95,9 +95,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($category)
     {
-        $category=Category::find($id);
+        $category=Category::find($category);
         $category->delete();
 
         return redirect()->route('categories.index')->with('success', 'Categoria eliminada');

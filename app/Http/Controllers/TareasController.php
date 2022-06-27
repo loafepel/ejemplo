@@ -9,7 +9,7 @@ class TareasController extends Controller
 {
     public function store(Request $request){
         $request->validate([
-            'title' => 'required|min:3'
+            'title' => 'required|min:3|unique:tareas'
         ]);
 
 

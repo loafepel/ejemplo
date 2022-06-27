@@ -11,10 +11,10 @@
 
          @error('title')
           <h6 class="alert alert-danger">{{$message}}</h6>
-          @enderror
+         @enderror
             <div class="mb-3">
               <label for="title" class="form-label">Nombre de tarea</label>
-              <input type="text" name="title" class="form-control">
+              <input type="text" name="title" class="form-control" value="{{old('title')}}">
               <div id="emailHelp" class="form-text">Ingresar tarea a realizar</div>
             </div>
             <button type="submit" class="btn btn-primary">Crear </button>
